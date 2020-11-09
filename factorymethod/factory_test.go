@@ -11,7 +11,7 @@ func compute(factory OperatorFactory, a, b int) int {
 
 func TestOperator(t *testing.T) {
 	var factory OperatorFactory
-	
+
 	factory = PlusOperatorFactory{}
 	if compute(factory, 2, 2) != 4 {
 		t.Fatal("error with factory method pattern")
