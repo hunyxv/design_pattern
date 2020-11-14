@@ -10,6 +10,8 @@ type Executer interface {
 	Execute() string
 }
 
+var _ Executer = (*Computer)(nil)
+
 type Computer struct {
 	Name string
 }
@@ -71,6 +73,8 @@ func (h *Human) Speak() string {
 func (h *Human) String() string {
 	return fmt.Sprintf("%s the human", h.Name)
 }
+
+var _ Executer = (*Adapter)(nil)
 
 // Adapter 适配器
 type Adapter struct {
