@@ -25,22 +25,22 @@ func (f *Fib) Calc(n int) int {
 
 type FibPlus struct {
 	Fibonacci
-	cach map[int]int
+	cache map[int]int
 }
 
 func NewFibPlus(fib Fibonacci) *FibPlus {
 	return &FibPlus{
 		Fibonacci: fib,
-		cach:      map[int]int{0: 0, 1: 1},
+		cache:     map[int]int{0: 0, 1: 1},
 	}
 }
 
 func (fp *FibPlus) Calc(n int) int {
-	if r, ok := fp.cach[n]; ok {
+	if r, ok := fp.cache[n]; ok {
 		return r
 	}
-	fp.cach[n] = fp.Fibonacci.Calc(n)
-	return fp.cach[n]
+	fp.cache[n] = fp.Fibonacci.Calc(n)
+	return fp.cache[n]
 }
 
 /*
@@ -67,12 +67,12 @@ func Fibfunc(n int) int {
 
 // Decorator 装饰器函数
 func Decorator(f FibFunc) FibFunc {
-	cach := map[int]int{0: 0, 1: 1}
+	cache := map[int]int{0: 0, 1: 1}
 	return func(n int) int {
-		if r, ok := cach[n]; ok {
+		if r, ok := cache[n]; ok {
 			return r
 		}
-		cach[n] = f(n)
-		return cach[n]
+		cache[n] = f(n)
+		return cache[n]
 	}
 }
