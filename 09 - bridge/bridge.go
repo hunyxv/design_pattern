@@ -2,10 +2,12 @@ package bridge
 
 import "fmt"
 
+// 抽象
 type AbstractMessage interface {
     SendMessage(text, to string)
 }
 
+// 具体实现
 type MessageImplementer interface {
     Send(text, to string)
 }
