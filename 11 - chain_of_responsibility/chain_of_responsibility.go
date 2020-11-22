@@ -36,13 +36,13 @@ func (hr *HRDepartment) SetNextHandler(chain Chain) {
 	hr.next = chain
 }
 
-// Handler .
-func (h *HRDepartment) Handle(event Event) {
+// Handle .
+func (hr *HRDepartment) Handle(event Event) {
 	if event == AskLeave {
 		fmt.Println("批准请假")
 		return
-	} else if h.next != nil {
-		if handler, ok := (h.next).(Handler); ok {
+	} else if hr.next != nil {
+		if handler, ok := hr.next.(Handler); ok {
 			handler.Handle(event)
 			return
 		}
@@ -63,7 +63,7 @@ func (f *FinanceDepartment) SetNextHandler(chain Chain) {
 	f.next = chain
 }
 
-// Handler .
+// Handle .
 func (f *FinanceDepartment) Handle(event Event) {
 	if event == Reimburse {
 		fmt.Println("批准报销")
