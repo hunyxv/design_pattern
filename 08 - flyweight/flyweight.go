@@ -81,6 +81,7 @@ func NewFruitTree(fruit Fruit, age AgeType) *FruitTree {
 	return fruitTreeCache[fruit]
 }
 
+// x, y 是坐标
 func (t *FruitTree) Render(x, y int) {
 	fmt.Printf("render a %s %s tree at (%d, %d)\n", t.AgeType, t.Fruit, x, y)
 }
