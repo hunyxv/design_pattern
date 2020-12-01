@@ -10,4 +10,5 @@
 !.vscode/extensions.json
 *.code-workspace
 
+go.sum
 # End of https://www.toptal.com/developers/gitignore/api/vscode
