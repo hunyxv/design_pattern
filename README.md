@@ -23,3 +23,4 @@ go 设计模式
 - [状态模式](https://github.com/hunyxv/design_pattern/tree/master/15%20-%20state)
 - [策略模式](https://github.com/hunyxv/design_pattern/tree/master/16%20-%20strategy)
 - [模板模式](https://github.com/hunyxv/design_pattern/tree/master/17%20-%20template)
+- [迭代器模式](https://github.com/hunyxv/design_pattern/tree/master/18%20-%20iterator)
