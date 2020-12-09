@@ -17,4 +17,7 @@ func TestMemento(t *testing.T) {
 
 	edit.Update("+++++++++++")
 	t.Log(edit)
+	if edit.Content != "---------" {
+		t.Fatal("回滚失败")
+	}
 }
