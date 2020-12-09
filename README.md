@@ -25,3 +25,4 @@ go 设计模式
 - [模板模式](https://github.com/hunyxv/design_pattern/tree/master/17%20-%20template)
 - [迭代器模式](https://github.com/hunyxv/design_pattern/tree/master/18%20-%20iterator)
 - [中介者模式](https://github.com/hunyxv/design_pattern/tree/master/19%20-%20mediator)
+- [备忘录模式](https://github.com/hunyxv/design_pattern/tree/master/20%20-%20memento)
