@@ -93,7 +93,7 @@ func (c *StorageCaretaker) Recovery(obj interface{}, fields ...string) (err erro
 	}
 
 	backup := make(map[string]interface{}, 0)
-	err = json.Unmarshal(data, backup)
+	err = json.Unmarshal(data, &backup)
 	if err != nil {
 		return err
 	}
@@ -130,13 +130,16 @@ func (e *Edit) Update(content string) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println("发生异常回滚")
-			e.storageCaretaker.Recovery(e, "Content", "UpdateTime")
+			err = e.storageCaretaker.Recovery(e, "Content", "UpdateTime")
+			if err != nil {
+				panic(err)
+			}
 		}
 	}()
 
-	if len(content) > 10 {
-		panic("context is too long")
-	}
 	e.Content = content
 	e.UpdateTime = time.Now().Format("2006/01/02 15:04:05")
+	if len(e.Content) > 10 {
+		panic("context is too long")
+	}
 }
